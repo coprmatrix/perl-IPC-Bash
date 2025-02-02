@@ -1,0 +1,19 @@
+<services>
+  <service name="obs_scm">
+    <param name="filename">IPC-Bash</param>
+    <param name="scm">git</param>
+    <param name="url">https://github.com/huakim/IPC-Bash</param>
+    <param name="revision">HEAD</param>
+    <param name="extract">*dist.ini</param>
+    <param name="without-version">enable</param>
+  </service>
+  <service name="dzil_build" mode="buildtime">
+    <param name="source">IPC-Bash</param>
+    <param name="generate">gzip</param>
+  </service>
+  
+  <service name="cpanspec" mode="buildtime">
+    <param name="source">IPC-Bash*.tar.gz</param>
+    <param name="add-requires">(dash or bash or zsh or sh or tcsh or ksh)</param>
+  </service>
+</services>
