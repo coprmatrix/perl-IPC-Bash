@@ -13,6 +13,7 @@
   </service>  
   <service name="cpanspec" mode="buildtime">
     <param name="source">IPC-Bash*.tar.gz</param>
+    <param name="add-buildrequires">make</param>
     <param name="add-requires">(dash or bash or zsh or sh or tcsh or ksh)</param>
   </service>
 </services>
